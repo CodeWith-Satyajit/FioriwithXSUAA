@@ -1,0 +1,29 @@
+{
+    "xsappname": "mta03",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of called application",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.read",
+            "description": "Role to read data"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "viewer",
+            "description": "Viewer Role",
+            "scope-references": [
+                "$XSAPPNAME.read"
+            ]
+        }
+    ],
+    "role-collections": [
+        {
+            "name": "roleCollectionToXSUAAFIORI",
+            "description": "Fiori with XSUAA",
+            "role-template-references": [
+                "$XSAPPNAME.viewer"
+            ]
+        }
+    ]
+}
